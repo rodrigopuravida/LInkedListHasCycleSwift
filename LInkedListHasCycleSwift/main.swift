@@ -8,5 +8,39 @@
 
 import Foundation
 
-println("Hello, World!")
+var hasCycle :Bool = false
+
+var node1 : Node = Node()
+var node2 : Node = Node()
+var node3 : Node = Node()
+var node4 : Node = Node()
+var node5 : Node = Node()
+
+//this linkedlist will have a cycle
+
+node1.next = node2
+node2.next = node3
+node3.next = node4
+node4.next = node3
+
+hasCycle = node1.containsCycle(node1)
+println(hasCycle)
+
+//this linkedlist will not have a cycle
+
+node1.next = node2
+node2.next = node3
+node3.next = node4
+node4.next = node5
+
+hasCycle = node1.containsCycle(node1)
+println(hasCycle)
+
+
+
+
+
+
+
+
 
